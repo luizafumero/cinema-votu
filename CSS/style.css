@@ -1,0 +1,798 @@
+
+/* =====================================================
+   CINE VOTU - ESTILO PRINCIPAL
+   ===================================================== */
+
+
+/* ---------- 1. VARIÁVEIS E CONFIGURAÇÕES ---------- */
+
+:root {
+    --preto: #0e0e0f;
+    --grafite: #17171a;
+    --cinza: #26262b;
+    --ouro: #c9a45c;
+    --ouro-claro: #e6c98a;
+    --creme: #f4ecdc;
+    --texto: #cfc8b9;
+
+    --raio: 14px;
+
+    --fonte-titulo: 'Playfair Display', Georgia, serif;
+    --fonte-texto: 'Montserrat', system-ui, sans-serif;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background: var(--preto);
+    color: var(--texto);
+    line-height: 1.65;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1160px, 100% - 2.5rem);
+    margin-inline: auto;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--creme);
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: clamp(2.3rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+em {
+    color: var(--ouro);
+    font-style: italic;
+}
+
+
+/* ---------- 2. TEXTOS E BOTÕES ---------- */
+
+.eyebrow {
+    color: var(--ouro);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--creme);
+}
+
+.logo span {
+    color: var(--ouro);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.85rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1.5px solid var(--ouro);
+    text-align: center;
+
+    transition:
+        transform 0.2s,
+        background 0.2s,
+        color 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-ouro {
+    background: var(--ouro);
+    color: var(--preto);
+}
+
+.btn-ouro:hover {
+    background: var(--ouro-claro);
+}
+
+.btn-contorno {
+    color: var(--ouro);
+}
+
+.btn-contorno:hover {
+    background: var(--ouro);
+    color: var(--preto);
+}
+
+.btn-pequeno {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.82rem;
+}
+
+.secao {
+    padding: 5.5rem 0;
+}
+
+.secao-escura {
+    background: var(--grafite);
+}
+
+.secao-cabecalho {
+    max-width: 620px;
+    margin-bottom: 3rem;
+}
+
+.secao-cabecalho h2 {
+    margin-bottom: 0.8rem;
+}
+
+
+/* ---------- 3. TOPO E MENU ---------- */
+
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    background: rgba(14, 14, 15, 0.92);
+    backdrop-filter: blur(8px);
+
+    border-bottom: 1px solid var(--cinza);
+}
+
+.topo-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 1rem;
+}
+
+.menu ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu a {
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: var(--ouro);
+}
+
+
+/* ---------- 4. APRESENTAÇÃO INICIAL ---------- */
+
+.hero {
+    padding: 5rem 0 6rem;
+}
+
+.hero-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-texto {
+    flex: 1 1 50%;
+}
+
+.hero-texto h1 {
+    margin-bottom: 1.4rem;
+}
+
+.hero-descricao {
+    max-width: 480px;
+    margin-bottom: 2rem;
+}
+
+.hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.hero-imagem {
+    flex: 1 1 42%;
+}
+
+.hero-imagem img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+
+    border-radius: 200px 200px var(--raio) var(--raio);
+
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.hero-numeros {
+    display: flex;
+    gap: 2.5rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid var(--cinza);
+}
+
+.hero-numeros li {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-numeros strong {
+    font-family: var(--fonte-titulo);
+    font-size: 1.9rem;
+    color: var(--ouro);
+}
+
+.hero-numeros span {
+    font-size: 0.8rem;
+}
+
+
+/* ---------- 5. CARTÕES DE FILMES ---------- */
+
+.equipe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.barbeiro {
+    background: var(--grafite);
+    border: 1px solid var(--cinza);
+    border-radius: var(--raio);
+    overflow: hidden;
+
+    transition:
+        transform 0.25s,
+        border-color 0.25s;
+}
+
+.barbeiro:hover {
+    transform: translateY(-6px);
+    border-color: var(--ouro);
+}
+
+.barbeiro img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+
+    filter: grayscale(0.2);
+    transition: filter 0.3s;
+}
+
+.barbeiro:hover img {
+    filter: grayscale(0);
+}
+
+.barbeiro-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.barbeiro-funcao {
+    color: var(--ouro);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+}
+
+.filme-selo {
+    align-self: flex-start;
+    background: var(--ouro);
+    color: var(--preto);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.filme-dias,
+.filme-horario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.85rem;
+}
+
+.filme-dias strong,
+.filme-horario strong {
+    color: var(--ouro-claro);
+}
+
+.filme .btn {
+    margin-top: auto;
+}
+
+.aviso {
+    margin-top: 2rem;
+    font-size: 0.78rem;
+    color: #a69c8a;
+}
+
+
+/* ---------- 6. GALERIA BENTO ---------- */
+
+.bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 210px;
+    gap: 1rem;
+}
+
+.bento-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--raio);
+    border: 1px solid var(--cinza);
+}
+
+.bento-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.bento-item:hover img {
+    transform: scale(1.08);
+}
+
+.bento-item figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2.4rem 1.1rem 1rem;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.85)
+    );
+
+    color: var(--creme);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.bento-1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.bento-2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.bento-3 {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+}
+
+.bento-4 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.bento-5 {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+}
+
+
+/* ---------- 7. SOBRE O CINEMA ---------- */
+
+.ambiente {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas:
+        "titulo imagem"
+        "texto imagem"
+        "numeros imagem";
+
+    column-gap: 4rem;
+    row-gap: 1.5rem;
+    align-items: center;
+}
+
+.amb-titulo {
+    grid-area: titulo;
+    align-self: end;
+}
+
+.amb-texto {
+    grid-area: texto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.amb-numeros {
+    grid-area: numeros;
+    align-self: start;
+
+    display: flex;
+    gap: 2.5rem;
+}
+
+.amb-imagem {
+    grid-area: imagem;
+}
+
+.amb-imagem img {
+    width: 100%;
+    aspect-ratio: 3 / 2.4;
+    object-fit: cover;
+    border-radius: var(--raio);
+    border: 1px solid var(--ouro);
+}
+
+.amb-numeros li {
+    display: flex;
+    flex-direction: column;
+}
+
+.amb-numeros strong {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    color: var(--ouro);
+}
+
+.amb-numeros span {
+    font-size: 0.8rem;
+}
+
+
+/* ---------- 8. AGENDA DE SESSÕES ---------- */
+
+.agenda-rolagem {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.agenda {
+    display: grid;
+    grid-template-columns: 120px repeat(6, minmax(100px, 1fr));
+    gap: 0.6rem;
+    min-width: 850px;
+}
+
+.agenda-canto,
+.agenda-dia,
+.agenda-hora,
+.slot {
+    display: grid;
+    place-items: center;
+    padding: 0.8rem 0.4rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+}
+
+.agenda-canto,
+.agenda-dia {
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-size: 0.78rem;
+}
+
+.agenda-hora {
+    font-weight: 600;
+    color: var(--creme);
+    background: var(--preto);
+    text-align: center;
+}
+
+.slot.livre {
+    background: rgba(201, 164, 92, 0.14);
+    border: 1px solid var(--ouro);
+    color: var(--ouro-claro);
+    font-weight: 600;
+
+    transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.2s;
+}
+
+.slot.livre:hover {
+    background: var(--ouro);
+    color: var(--preto);
+    transform: scale(1.05);
+}
+
+.slot.ocupado {
+    background: var(--cinza);
+    color: #6d6a63;
+    text-decoration: line-through;
+}
+
+.legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.82rem;
+}
+
+.legenda span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legenda i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.livre-cor {
+    background: var(--ouro);
+}
+
+.ocupado-cor {
+    background: var(--cinza);
+}
+
+.agenda-botao {
+    margin-top: 2rem;
+}
+
+
+/* ---------- 9. LOCALIZAÇÃO ---------- */
+
+.localizacao {
+    display: flex;
+    align-items: center;
+    min-height: 260px;
+}
+
+.localizacao > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 650px;
+}
+
+
+/* ---------- 10. RODAPÉ ---------- */
+
+.rodape {
+    background: #09090a;
+    padding-top: 4rem;
+    border-top: 1px solid var(--cinza);
+}
+
+.rodape-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+}
+
+.rodape-marca {
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.rodape-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 0.92rem;
+}
+
+.rodape-contato a:hover,
+.rodape-links a:hover {
+    color: var(--ouro);
+}
+
+.rodape-copy {
+    text-align: center;
+    padding: 1.4rem;
+    border-top: 1px solid var(--cinza);
+    font-size: 0.8rem;
+}
+
+
+/* ---------- 11. ANIMAÇÕES ---------- */
+
+.hero-texto {
+    animation: aparecer 1s ease;
+}
+
+.hero-imagem {
+    animation: subir 1s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- 12. RESPONSIVIDADE ---------- */
+
+@media (max-width: 860px) {
+
+    .topo-conteudo {
+        flex-wrap: wrap;
+    }
+
+    .menu ul {
+        gap: 1rem;
+    }
+
+    .hero-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-imagem {
+        width: 100%;
+    }
+
+    .hero-imagem img {
+        max-height: 420px;
+    }
+
+    .bento {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+    }
+
+    .bento-1 {
+        grid-column: 1 / -1;
+        grid-row: auto / span 2;
+    }
+
+    .bento-2,
+    .bento-3,
+    .bento-4 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .bento-5 {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .ambiente {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "titulo"
+            "imagem"
+            "texto"
+            "numeros";
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .topo-conteudo {
+        justify-content: center;
+    }
+
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .hero {
+        padding-top: 3rem;
+    }
+
+    .hero-numeros {
+        flex-wrap: wrap;
+    }
+
+    .bento {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-1,
+    .bento-2,
+    .bento-3,
+    .bento-4,
+    .bento-5 {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .bento-item {
+        min-height: 200px;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+    }
+
+}
